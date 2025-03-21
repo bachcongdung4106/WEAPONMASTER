@@ -1,0 +1,4 @@
+﻿  Object.cpp
+C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\Object.cpp(1,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\Object.cpp(2,9): error C2008: ';': unexpected in macro definition
+C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\Object.cpp(3,1): error C1070: mismatched #if/#endif pair in file 'C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\Object.cpp'

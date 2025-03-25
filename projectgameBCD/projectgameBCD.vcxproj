@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chuthich.cpp" />
     <ClCompile Include="CommonFunction.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />

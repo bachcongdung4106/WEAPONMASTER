@@ -1,0 +1,1 @@
+//rect_ la mot strut luu kich thuoc

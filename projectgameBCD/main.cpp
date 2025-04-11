@@ -1,5 +1,6 @@
 #include "CommonFunction.h"
 #include "Object.h"
+#include "TileMap.h"
 Object g_background;
 
 
@@ -63,8 +64,18 @@ void close()
 }
 
 int main(int argc, char* argv[]) {
-	if (InitData() == false) return -1;
-	if (LoadBackground() == false) return -1;
+	if (InitData() == false)
+		return -1;
+
+	if (LoadBackground() == false)
+		return -1;
+
+	GameMap game_map;
+	game_map.LoadMap("C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\x64\Debug\map");//de y
+
+	game_map.LoadTiles(g_screen);
+
+
 	bool is_quit = false;
 		while (!is_quit)
 	{
@@ -78,7 +89,11 @@ int main(int argc, char* argv[]) {
 		}
 			SDL_SetRenderDrawColor(g_screen, RENDER_DRAW_COLOR , RENDER_DRAW_COLOR , RENDER_DRAW_COLOR , RENDER_DRAW_COLOR);
 			SDL_RenderClear(g_screen);
+
 			g_background.Render(g_screen, NULL);
+			game_map.DrawMap(g_screen);
+
+
 			SDL_RenderPresent(g_screen);
 
 

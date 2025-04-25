@@ -1,6 +1,9 @@
 #include "CommonFunction.h"
 #include "Object.h"
 #include "TileMap.h"
+#include "MainObject.h"
+#include "ImpTimer.h"
+#include "BulletObject.h"
 Object g_background;
 
 
@@ -26,7 +29,7 @@ bool InitData()
 	}
 	else
 	{
-		g_screen = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED);// tao but ve
+		g_screen = SDL_CreateRenderer(g_window, -1, SDL_RENDERER_ACCELERATED );// tao but ve
 		if (g_screen == NULL)
 			success = false;
 		else
@@ -64,6 +67,9 @@ void close()
 }
 
 int main(int argc, char* argv[]) {
+
+	ImpTimer fps_timer;
+
 	if (InitData() == false)
 		return -1;
 
@@ -71,20 +77,26 @@ int main(int argc, char* argv[]) {
 		return -1;
 
 	GameMap game_map;
-	game_map.LoadMap("C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\x64\Debug\map");//de y
+	game_map.LoadMap("map/map01.dat");//de y
+    game_map.LoadTiles(g_screen);
 
-	game_map.LoadTiles(g_screen);
+	MainObject p_player;
+	p_player.LoadImg("img/spritesheet/walkright.png", g_screen);
+	p_player.set_clips();
 
 
-	bool is_quit = false;
-		while (!is_quit)
+    bool is_quit = false;
+	while (!is_quit)
 	{
-			while (SDL_PollEvent(&g_event))//trong huong dan là &g_svent
+		fps_timer.start();
+		while (SDL_PollEvent(&g_event))//trong huong dan là &g_svent
 		{
 				if (g_event.type == SDL_QUIT)
 				{
 					is_quit = true;
 			    }
+
+				p_player.HandelInputAction(g_event, g_screen);
 
 		}
 			SDL_SetRenderDrawColor(g_screen, RENDER_DRAW_COLOR , RENDER_DRAW_COLOR , RENDER_DRAW_COLOR , RENDER_DRAW_COLOR);
@@ -92,9 +104,30 @@ int main(int argc, char* argv[]) {
 
 			g_background.Render(g_screen, NULL);
 			game_map.DrawMap(g_screen);
+			Map map_data = game_map.getMap();
+
+			p_player.HandleBullet(g_screen);
+
+			p_player.SetMapXY(map_data.start_x_, map_data.start_y_);
+			p_player.DoPlayer(map_data);
+			p_player.Show(g_screen,map_data);
+
+			game_map.SetMap(map_data);
+			game_map.DrawMap(g_screen);
 
 
 			SDL_RenderPresent(g_screen);
+			
+			int real_imp_time = fps_timer.get_ticks();
+			int time_one_frame = 1000 / FRAME_PER_SECOND;//mili second
+
+			if (real_imp_time < time_one_frame)
+			{
+				int delay_time = time_one_frame - real_imp_time;
+				if (delay_time >= 0)
+				    SDL_Delay(delay_time);
+			}
+
 
 
 

@@ -20,6 +20,14 @@ public:
 	void LoadMap(const char* name);// da sua them const
 	void LoadTiles(SDL_Renderer* screen);
 	void DrawMap(SDL_Renderer* screen);
+	Map getMap() const
+	{
+		return game_map_;
+	};
+	void SetMap(Map map_data )
+	{
+		game_map_ = map_data;
+	}
 
 private:
 	Map game_map_;

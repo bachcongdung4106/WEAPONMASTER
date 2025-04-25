@@ -1,5 +1,1 @@
-﻿  TileMap.cpp
-C:\Users\DELL\source\repos\projectgameBCD\projectgameBCD\CommonFunction.h(28,16): warning C4091: 'typedef ': ignored on left of 'Map' when no variable is declared
-  (compiling source file 'TileMap.cpp')
-  
-  projectgameBCD.vcxproj -> C:\Users\DELL\source\repos\projectgameBCD\x64\Debug\projectgameBCD.exe
+﻿  projectgameBCD.vcxproj -> C:\Users\DELL\source\repos\projectgameBCD\x64\Debug\projectgameBCD.exe

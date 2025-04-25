@@ -132,14 +132,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BulletObject.cpp" />
     <ClCompile Include="chuthich.cpp" />
     <ClCompile Include="CommonFunction.cpp" />
+    <ClCompile Include="ImpTimer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainObject.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BulletObject.h" />
     <ClInclude Include="CommonFunction.h" />
+    <ClInclude Include="ImpTimer.h" />
+    <ClInclude Include="MainObject.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="TileMap.h" />
   </ItemGroup>

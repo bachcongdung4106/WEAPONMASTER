@@ -12,6 +12,7 @@ Object::~Object() {
 }
 bool Object::LoadImg(std::string path, SDL_Renderer* screen) {
 	SDL_Texture* new_texture = NULL;
+
 	SDL_Surface* load_surface = IMG_Load(path.c_str());//chuyen string(tên file)->char roi load anh
 	if (load_surface != NULL)
 	{

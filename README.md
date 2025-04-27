@@ -1,6 +1,6 @@
 # WEAPON_MASTER - BACH_CONG_DUNG
 
-Là một tựa game 2D dựa trên tựa game huyền thoại Contra, nơi chúng ta dùng khả năng của mình để chiến đấu với các mối hiểm họa nguy hiểm, né tránh những đòn tấn công nguy hiểm của lũ quái vật. Với bản đồ rộng lớn, lối chơi thú vị, bạn sẽ có một trải nghiệm thích thú.
+Là một tựa game 2D dựa trên tựa game huyền thoại Contra, nhân vật chính của chúng ta là một chiến binh thiện chiến và dũng cảm ,đây là nơi chúng ta dùng khả năng của mình để chiến đấu với các mối hiểm họa nguy hiểm, né tránh những đòn tấn công nguy hiểm của lũ quái vật. Với bản đồ rộng lớn, lối chơi thú vị, bạn sẽ có một trải nghiệm thích thú.
 
 ## Công nghệ sử dụng
 
@@ -15,9 +15,13 @@ Là một tựa game 2D dựa trên tựa game huyền thoại Contra, nơi chú
 - Bắn đạn để tiêu diệt kẻ thù.
 - Nhặt đồng xu trên map để tăng điểm thưởng.
 - đánh boss
+- -đếm số quái bạn đã giết
 
 ## Các nguồn của bài
 
 - Làm theo hướng dẫn danh sách game _sdl_2.0_ của YouTube [phattrienphanmem123.a-z](https://www.youtube.com/@phattrienphanmem123az).
 - Hình ảnh nhân vật và sprite, background tìm kiếm trên web [itch.io](https://itch.io/).
 - video cuối https://drive.google.com/drive/folders/1KyVnZuFQaKRxP2bReJR4eVZXN-AbIzRQ?usp=drive_link
+## cách tải mở game 
+vào mở link https://github.com/bachcongdung4106/WEAPONMASTER để tải project, ở đây đã đầy đủ thư viện, cách file ảnh và mã code
+nếu có thắc mắc,bổ sung, góp ý cho bài tập và yêu cầu gì xin liên hệ đến em qua gmail bachcongdung206@gmail.com XIN CẢM ƠN!!

@@ -14,6 +14,7 @@ Là một tựa game 2D dựa trên tựa game huyền thoại Contra, nơi chú
 - Bản đồ tự động cuộn khi nhân vật di chuyển.
 - Bắn đạn để tiêu diệt kẻ thù.
 - Nhặt đồng xu trên map để tăng điểm thưởng.
+- đánh boss
 
 ## Các nguồn của bài
 

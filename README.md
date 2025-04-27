@@ -19,3 +19,4 @@ Là một tựa game 2D dựa trên tựa game huyền thoại Contra, nơi chú
 
 - Làm theo hướng dẫn danh sách game _sdl_2.0_ của YouTube [phattrienphanmem123.a-z](https://www.youtube.com/@phattrienphanmem123az).
 - Hình ảnh nhân vật và sprite, background tìm kiếm trên web [itch.io](https://itch.io/).
+- video cuối https://drive.google.com/drive/folders/1KyVnZuFQaKRxP2bReJR4eVZXN-AbIzRQ?usp=drive_link

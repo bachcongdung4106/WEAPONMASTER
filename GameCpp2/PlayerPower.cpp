@@ -31,15 +31,17 @@ void PlayerPower::Show(SDL_Renderer* screen)
 void PlayerPower::Init(SDL_Renderer* screen)
 {
   LoadImg("img//player_pw.png", screen);
-  number_ = 3;
-  if (position_list_.size() > 0)
+  number_ = CHAR_LIVE;
+  if (!position_list_.empty())
   {
-    position_list_.clear();
+      position_list_.clear();
   }
 
-  AddPos(20);
-  AddPos(60);
-  AddPos(100);
+  for (int i = 0; i < CHAR_LIVE; ++i)
+  {
+      AddPos(20 + i * 40); 
+  }
+
 }
 
 void PlayerPower::Decrease()

@@ -17,7 +17,8 @@
 #define PLAYER_SPEED 2
 #define PLAYER_HIGHT_VAL 18;
 
-#define NUM_FRAME 8
+#define NUM_THREAT_FRAME 8
+
 
 class ThreatsObject : public BaseObject
 {
@@ -81,7 +82,7 @@ private:
   int on_ground_;
   int think_time_;
   Input input_type_;
-  SDL_Rect frame_clip_[NUM_FRAME];
+  SDL_Rect frame_clip_[NUM_THREAT_FRAME];
   int width_frame_;
   int height_frame_;
   int frame_;

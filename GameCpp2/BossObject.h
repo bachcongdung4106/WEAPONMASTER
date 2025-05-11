@@ -14,7 +14,7 @@
 #define PLAYER_SPEED 2
 #define PLAYER_HIGHT_VAL 18;
 
-#define FRAME_NUM_32 32
+#define FRAME_BOSS_NUM_ 32
 
 class BossObject : public BaseObject
 {
@@ -47,6 +47,17 @@ public:
 
     void InitBullet(SDL_Renderer* screen);
     void MakeBullet(SDL_Renderer* des, const int& x_limit, const int& y_limit);
+    //health boss
+    void SetHealthPoint(const int& hp) { health_point = hp; }
+    int GetHealthPoint() const { return health_point; }
+    /*
+    void DecreaseHealth() { health_point--; }
+    bool IsDead() const { return health_point <= 0; }
+    
+    void DecreaseHealth();
+    bool IsDead() const;
+    SDL_Rect GetRectFrame() const;
+    */
 
 private:
     int map_x_;
@@ -55,7 +66,7 @@ private:
     int think_time_;
     Input input_type_;
     int frame_;
-    SDL_Rect frame_clip_[FRAME_NUM_32];
+    SDL_Rect frame_clip_[FRAME_BOSS_NUM_];
     int x_pos_;
     int y_pos_;
     float x_val_;
@@ -63,6 +74,7 @@ private:
     int width_frame_;
     int height_frame_;
     std::vector<BulletObject*> bullet_list_;
+    int health_point;
 };
 
 

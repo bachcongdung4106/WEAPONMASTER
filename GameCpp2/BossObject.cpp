@@ -15,6 +15,7 @@ BossObject::BossObject()
     think_time_ = 0;
     map_x_ = 0;
     map_y_ = 0;
+    health_point = 10;
 
 
 }
@@ -30,7 +31,7 @@ bool BossObject::LoadImg(std::string path, SDL_Renderer* screen)
 
     if (ret == true)
     {
-        width_frame_ = rect_.w/FRAME_NUM_32;
+        width_frame_ = rect_.w/FRAME_BOSS_NUM_;
         height_frame_ = rect_.h;
     }
 
@@ -42,7 +43,7 @@ void BossObject::set_clips()
     //Clip the sprites
     if (width_frame_ > 0 && height_frame_ > 0)
     {
-        for (int i = 0; i < FRAME_NUM_32; ++i)
+        for (int i = 0; i < FRAME_BOSS_NUM_; ++i)
         {
             frame_clip_[i].x = width_frame_*i;
             frame_clip_[i].y = 0;
@@ -141,7 +142,7 @@ void BossObject::InitPlayer()
     input_type_.left_ = 1;
 }
 
-void BossObject::CenterEntityOnMap(Map& g_map)
+void BossObject::CenterEntityOnMap(Map& g_map)//di chuyen map
 {
     g_map.start_x_ = x_pos_ - (SCREEN_WIDTH / 2);
 
@@ -284,7 +285,7 @@ void BossObject::InitBullet(SDL_Renderer* screen)
         p_bullet->set_dir_bullet(BulletObject::DIR_LEFT);
         p_bullet->set_is_move(true);
         p_bullet->SetRect(rect_.x - 50, rect_.y + height_frame_ - 30);
-        p_bullet->set_x_val(15);
+        p_bullet->set_x_val(10 );//toc do dan = so pixel môi frame
         bullet_list_.push_back(p_bullet);
     }
 }
@@ -315,3 +316,5 @@ void BossObject::MakeBullet(SDL_Renderer* des, const int& x_limit, const int& y_
         }
     }
 }
+
+

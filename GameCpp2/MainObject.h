@@ -10,6 +10,8 @@
 #define GRAVITY_SPEED 0.8
 #define MAX_FALL_SPEED 10
 
+#define  NUM_MAIN_FRAME 6
+
 #define PLAYER_SPEED 8
 #define PLAYER_HIGHT_VAL 18;
 
@@ -37,6 +39,8 @@ public:
 
   void CenterEntityOnMap(Map& g_map);
   void CheckToMap(Map& g_map);
+  //
+  bool CanFireBullet();
 
   std::vector<BulletObject*> get_bullet_list() const {return p_bullet_list_;}
   void set_bullet_list(std::vector<BulletObject*> bullet_list)
@@ -54,6 +58,8 @@ public:
   void UpdateImagePlayer(SDL_Renderer* des);
   void IncreaseMoney();
   int GetMoneyCount() const { return money_count_; };
+  //da sua
+
 private:
 
   int money_count_;
@@ -63,6 +69,13 @@ private:
   bool is_jump_;
   int frame_;
   int status_;
+  //
+  int bullet_count_;         
+  int bullet_limit_;         
+  Uint32 reload_time_;       
+  Uint32 last_reload_time_;  
+  bool can_fire_;            
+  //dasua
 
   SDL_Rect frame_clip_[8];
   Input input_type_;

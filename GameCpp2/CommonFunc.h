@@ -34,14 +34,19 @@ const int COLOR_KEY_B = 180;
 static char g_name_main_right[]               = {"img//player_right.png"};
 static char g_name_main_left[]              = {"img//player_left.png"};
 
+const int CHAR_LIVE = 5;
+
 #define TILE_SIZE 64
 #define BLANK_TILE 0
 
 #define MAX_MAP_X 400
 #define MAX_MAP_Y 10
 
+
+
 #define STATE_MONEY 4
 #define  STATE_MONEY2 14
+
 
 typedef struct Input
 {

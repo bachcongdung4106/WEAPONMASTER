@@ -4,7 +4,9 @@
 #include "CommonFunc.h"
 #include "BaseObject.h"
 
-#define  NUM_FRAME_EXP 8
+#define  NUM_EXP_FRAME 8
+
+
 
 class ExplosionObject : public BaseObject
 {

@@ -5,7 +5,6 @@
 //const int PLAYER_WIDTH = 60;
 //const int PLAYER_HEIGHT = 64;
 
-#define  NUM_FRAME 8
 
 MainObject::MainObject()
 {
@@ -28,6 +27,11 @@ MainObject::MainObject()
   input_type_.up_ = 0;
   money_count_ = 0;
   status_ = WALK_NONE;
+  bullet_count_ = 0;
+  bullet_limit_ = 5;
+  reload_time_ = 2000; 
+  last_reload_time_ = 0;
+  can_fire_ = true;
 }
 
 MainObject::~MainObject()
@@ -41,92 +45,128 @@ SDL_Rect MainObject::GetRectFrame()
   SDL_Rect rect;
   rect.x = rect_.x;
   rect.y = rect_.y;
-  rect.w = rect_.w/NUM_FRAME;
+  rect.w = rect_.w/NUM_MAIN_FRAME;
   rect.h = rect_.h;
   return rect;
 }
 
-void MainObject::HandleInputAction(SDL_Event events, SDL_Renderer* screen) 
+bool MainObject::CanFireBullet()
 {
 
-  //If a key was pressed
-  if( events.type == SDL_KEYDOWN )
-  {
-    //Set the velocity
-    switch( events.key.keysym.sym )
+    if (bullet_count_ >= bullet_limit_)
     {
-    case SDLK_RIGHT: 
-      {
-        status_  = WALK_RIGHT;
-        input_type_.right_ = 1;
-        UpdateImagePlayer(screen);
-        break;
-      }
-    case SDLK_LEFT: 
-      {
-        status_ = WALK_LEFT;
-        input_type_.left_ = 1;
-        UpdateImagePlayer(screen);
-        break;
-      }
+
+        Uint32 current_time = SDL_GetTicks();
+        if (current_time - last_reload_time_ >= reload_time_)
+        {
+
+            bullet_count_ = 0;
+            last_reload_time_ = current_time;
+            return true;
+        }
+        else
+        {
+
+            return false;
+        }
     }
-  }
-  //If a key was released
-  else if( events.type == SDL_KEYUP )
-  {
-    ////Set the velocity
-      switch( events.key.keysym.sym )
-      {
-      case SDLK_RIGHT: input_type_.right_ = 0; break;
-      case SDLK_LEFT: input_type_.left_ = 0; break;
-          break;
-      }
-  }
-  else if (events.type == SDL_MOUSEBUTTONDOWN) 
-  {
-     if (events.button.button == SDL_BUTTON_LEFT) 
-     {
-      BulletObject* p_bullet = new BulletObject();
-      p_bullet->LoadImg("img//player_bullet.png", screen);
-      //p_bullet->set_type(BulletObject::SPHERE);
+
+
+    return true;
+}
+
+void MainObject::HandleInputAction(SDL_Event events, SDL_Renderer* screen)
+{
+    // Handle key down events
+    if (events.type == SDL_KEYDOWN)
+    {
+        switch (events.key.keysym.sym)
+        {
+        case SDLK_RIGHT:
+            status_ = WALK_RIGHT;
+            input_type_.right_ = 1;
+            UpdateImagePlayer(screen);
+            break;
+
+        case SDLK_LEFT:
+            status_ = WALK_LEFT;
+            input_type_.left_ = 1;
+            UpdateImagePlayer(screen);
+            break;
+
+        case SDLK_SPACE:
+            input_type_.jump_ = 1;
+            break;
+        }
+    }
+
+    // Handle key up events
+    else if (events.type == SDL_KEYUP)
+    {
+        switch (events.key.keysym.sym)
+        {
+        case SDLK_RIGHT:
+            input_type_.right_ = 0;
+            break;
+
+        case SDLK_LEFT:
+            input_type_.left_ = 0;
+            break;
+        }
+    }
+
+    // Handle mouse button down events
+    else if (events.type == SDL_MOUSEBUTTONDOWN)
+    {
+        if (events.button.button == SDL_BUTTON_LEFT)
+        {
+            if (CanFireBullet())
+            {
+                BulletObject* p_bullet = new BulletObject();
+                p_bullet->LoadImg("img//player_bullet.png", screen);
 
 #ifdef USE_AUDIO 
-      int ret = Mix_PlayChannel(-1, bullet_sound[0], 0 );
+                Mix_PlayChannel(-1, bullet_sound[0], 0);
 #endif
-      if (status_ == WALK_LEFT)
-      {
-        p_bullet->set_dir_bullet(BulletObject::DIR_LEFT);
-        p_bullet->SetRect(this->rect_.x, this->rect_.y + height_frame_*0.22);
-      }
-      else
-      {
-        p_bullet->set_dir_bullet(BulletObject::DIR_RIGHT);
-        p_bullet->SetRect(this->rect_.x + width_frame_ - 20, this->rect_.y + height_frame_*0.22);
-      }
 
-      p_bullet->set_x_val(20);
-      p_bullet->set_y_val(20);
-      //p_bullet->set_move_type(BulletObject::SIN_TYPE);
+                if (status_ == WALK_LEFT)
+                {
+                    p_bullet->set_dir_bullet(BulletObject::DIR_LEFT);
+                    p_bullet->SetRect(this->rect_.x, this->rect_.y + height_frame_ * 0.22);
+                }
+                else
+                {
+                    p_bullet->set_dir_bullet(BulletObject::DIR_RIGHT);
+                    p_bullet->SetRect(this->rect_.x + width_frame_ - 20, this->rect_.y + height_frame_ * 0.22);
+                }
 
-      p_bullet->set_is_move(true);
-      p_bullet_list_.push_back(p_bullet);
-  }
-    else if (events.button.button == SDL_BUTTON_RIGHT)
-    {
-        input_type_.jump_ = 1;
+                p_bullet->set_x_val(20);
+                p_bullet->set_y_val(20);
+                p_bullet->set_is_move(true);
+                p_bullet_list_.push_back(p_bullet);
+                bullet_count_++;
+            }
+        }
+
+        // Optional: handle right mouse click here
+        // else if (events.button.button == SDL_BUTTON_RIGHT)
+        // {
+        //     input_type_.jump_ = 1;
+        // }
     }
-  }
-  else if (events.type == SDL_MOUSEBUTTONUP)
-  {
-    if (events.button.button == SDL_BUTTON_LEFT) 
+
+    // Handle mouse button up events
+    else if (events.type == SDL_MOUSEBUTTONUP)
     {
-      ;//
+        if (events.button.button == SDL_BUTTON_LEFT)
+        {
+            // Do nothing when left mouse button is released
+        }
+        else
+        {
+            // Do nothing for other mouse buttons
+        }
     }
-    else
-    {
-      ;//
-    }
-  }
 }
 
 
@@ -152,6 +192,7 @@ void MainObject::HandleBullet(SDL_Renderer* des)
           p_bullet_list_.erase(p_bullet_list_.begin() + i);
           delete p_bullet;
           p_bullet = NULL;
+          
         }
       }
     }
@@ -179,7 +220,7 @@ bool MainObject::LoadImg(std::string path, SDL_Renderer* screen)
 
   if (ret == true)
   {
-    width_frame_ = rect_.w/NUM_FRAME;
+    width_frame_ = rect_.w/NUM_MAIN_FRAME;
     height_frame_ = rect_.h;
   }
 
@@ -188,51 +229,19 @@ bool MainObject::LoadImg(std::string path, SDL_Renderer* screen)
 
 void MainObject::set_clips()
 {
-  //Clip the sprites
-  if (width_frame_ > 0 && height_frame_ > 0)
-  {
-    frame_clip_[ 0 ].x = 0;
-    frame_clip_[ 0 ].y = 0;
-    frame_clip_[ 0 ].w = width_frame_;
-    frame_clip_[ 0 ].h = height_frame_;
-
-    frame_clip_[ 1 ].x = width_frame_;
-    frame_clip_[ 1 ].y = 0;
-    frame_clip_[ 1 ].w = width_frame_;
-    frame_clip_[ 1 ].h = height_frame_;
-
-    frame_clip_[ 2 ].x = width_frame_ * 2;
-    frame_clip_[ 2 ].y = 0;
-    frame_clip_[ 2 ].w = width_frame_;
-    frame_clip_[ 2 ].h = height_frame_;
-
-    frame_clip_[ 3 ].x = width_frame_ * 3;
-
-    frame_clip_[ 3 ].y = 0;
-    frame_clip_[ 3 ].w = width_frame_;
-    frame_clip_[ 3 ].h = height_frame_;
-
-    frame_clip_[ 4 ].x = width_frame_ * 4;
-    frame_clip_[ 4 ].y = 0;
-    frame_clip_[ 4 ].w = width_frame_;
-    frame_clip_[ 4 ].h = height_frame_;
-
-    frame_clip_[ 5 ].x = width_frame_ * 5;
-    frame_clip_[ 5 ].y = 0;
-    frame_clip_[ 5 ].w = width_frame_;
-    frame_clip_[ 5 ].h = height_frame_;
-
-    frame_clip_[ 6 ].x = width_frame_ * 6;
-    frame_clip_[ 6 ].y = 0;
-    frame_clip_[ 6 ].w = width_frame_;
-    frame_clip_[ 6 ].h = height_frame_;
-
-    frame_clip_[ 7 ].x = width_frame_ * 7;
-    frame_clip_[ 7 ].y = 0;
-    frame_clip_[ 7 ].w = width_frame_;
-    frame_clip_[ 7 ].h = height_frame_;
-  }
+    // Clip the sprites
+    if (width_frame_ > 0 && height_frame_ > 0)
+    {
+        for (int i = 0; i <= NUM_MAIN_FRAME ; ++i)
+        {
+            frame_clip_[i].x = width_frame_ * i;
+            frame_clip_[i].y = 0;
+            frame_clip_[i].w = width_frame_;
+            frame_clip_[i].h = height_frame_;
+        }
+    }
 }
+
 
 void MainObject::Show(SDL_Renderer* des)
 {
@@ -367,14 +376,7 @@ void MainObject::CheckToMap(Map& g_map)
   //on_ground_ = false;
   int height_min =    height_frame_ < TILE_SIZE ? height_frame_ : TILE_SIZE;    //SDLCommonFunc::GetMin(height_frame_ TILE_SIZE);
 
-  /*
-           x1,y1***x2
-           *       *
-           *       *
-           *       *
-           *y2******
 
-  */
   x1 = (x_pos_ + x_val_) / TILE_SIZE;
   x2 = (x_pos_ + x_val_ + width_frame_ - 1) / TILE_SIZE;
 
@@ -430,7 +432,7 @@ void MainObject::CheckToMap(Map& g_map)
     }
   }
 
-  // Check vertical
+  
   int width_min =  width_frame_ < TILE_SIZE ? width_frame_ : TILE_SIZE;//SDLCommonFunc::GetMin(width_frame_, TILE_SIZE);
 
   x1 = (x_pos_) / TILE_SIZE;

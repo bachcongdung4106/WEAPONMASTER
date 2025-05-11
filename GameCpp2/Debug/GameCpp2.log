@@ -1,114 +1,100 @@
-﻿  BossObject.cpp
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\CommonFunc.h(67,16): warning C4091: 'typedef ': ignored on left of 'GeometricFormat' when no variable is declared
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\CommonFunc.h(77,16): warning C4091: 'typedef ': ignored on left of 'ColorData' when no variable is declared
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.h(24,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.h(25,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(85,19): warning C4305: '+=': truncation from 'double' to 'float'
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(191,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(192,47): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(230,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(231,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(260,15): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(261,15): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-  (compiling source file '/BossObject.cpp')
-  
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.cpp(300,23): warning C4018: '<': signed/unsigned mismatch
-  (compiling source file '/BossObject.cpp')
-  
-  main.cpp
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\CommonFunc.h(67,16): warning C4091: 'typedef ': ignored on left of 'GeometricFormat' when no variable is declared
+﻿  main.cpp
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\CommonFunc.h(72,16): warning C4091: 'typedef ': ignored on left of 'GeometricFormat' when no variable is declared
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\CommonFunc.h(77,16): warning C4091: 'typedef ': ignored on left of 'ColorData' when no variable is declared
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\CommonFunc.h(82,16): warning C4091: 'typedef ': ignored on left of 'ColorData' when no variable is declared
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(17,9): warning C4005: 'PLAYER_SPEED': macro redefinition
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(17,9): warning C4005: 'PLAYER_SPEED': macro redefinition
   (compiling source file '/main.cpp')
-      C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\MainObject.h(13,9):
+      C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\MainObject.h(15,9):
       see previous definition of 'PLAYER_SPEED'
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(30,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(31,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(31,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(32,36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(33,43): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(34,43): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(34,43): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(35,43): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(35,27): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(36,27): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\ThreatsObject.h(36,27): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\ThreatsObject.h(37,27): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.h(24,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\BossObject.h(24,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\BossObject.h(25,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\BossObject.h(25,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(180,42): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(189,44): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(190,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(199,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(264,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(295,27): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(279,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(310,33): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(304,30): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(335,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(305,29): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(336,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(344,28): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(381,29): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(350,34): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(387,35): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(366,38): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(403,39): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(367,38): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(404,39): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(427,56): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(496,59): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(433,58): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(502,61): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/main.cpp')
   
-C:\Users\DELL\Downloads\GameCpp2\GameCpp2\GameCpp2\main.cpp(460,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(523,33): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/main.cpp')
   
-  Generating Code...
-  GameCpp2.vcxproj -> C:\Users\DELL\Downloads\GameCpp2\GameCpp2\Debug\GameCpp2.exe
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(552,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(553,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(595,33): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(606,39): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(607,39): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(626,43): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(627,43): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file '/main.cpp')
+  
+C:\Users\DELL\source\repos\projectgameBCD\GameCpp2\main.cpp(708,23): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '/main.cpp')
+  
+  GameCpp2.vcxproj -> C:\Users\DELL\source\repos\projectgameBCD\Debug\GameCpp2.exe

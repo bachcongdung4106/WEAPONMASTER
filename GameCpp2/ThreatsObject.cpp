@@ -47,7 +47,7 @@ SDL_Rect ThreatsObject::GetRectFrame()
   SDL_Rect rect;
   rect.x = rect_.x;
   rect.y = rect_.y;
-  rect.w = rect_.w/NUM_FRAME;
+  rect.w = rect_.w/NUM_THREAT_FRAME;
   rect.h = rect_.h;
 
   return rect;
@@ -170,7 +170,7 @@ bool ThreatsObject::LoadImg(std::string path, SDL_Renderer* screen)
 
   if (ret == true)
   {
-    width_frame_ = rect_.w/NUM_FRAME;
+    width_frame_ = rect_.w/NUM_THREAT_FRAME;
     height_frame_ = rect_.h;
   }
 
@@ -180,49 +180,17 @@ bool ThreatsObject::LoadImg(std::string path, SDL_Renderer* screen)
 
 void ThreatsObject::set_clips()
 {
-  //Clip the sprites
-  if (width_frame_ > 0 && height_frame_ > 0)
-  {
-    frame_clip_[ 0 ].x = 0;
-    frame_clip_[ 0 ].y = 0;
-    frame_clip_[ 0 ].w = width_frame_;
-    frame_clip_[ 0 ].h = height_frame_;
-
-    frame_clip_[ 1 ].x = width_frame_;
-    frame_clip_[ 1 ].y = 0;
-    frame_clip_[ 1 ].w = width_frame_;
-    frame_clip_[ 1 ].h = height_frame_;
-
-    frame_clip_[ 2 ].x = width_frame_ * 2;
-    frame_clip_[ 2 ].y = 0;
-    frame_clip_[ 2 ].w = width_frame_;
-    frame_clip_[ 2 ].h = height_frame_;
-
-    frame_clip_[ 3 ].x = width_frame_ * 3;
-    frame_clip_[ 3 ].y = 0;
-    frame_clip_[ 3 ].w = width_frame_;
-    frame_clip_[ 3 ].h = height_frame_;
-
-    frame_clip_[ 4 ].x = width_frame_ * 4;
-    frame_clip_[ 4 ].y = 0;
-    frame_clip_[ 4 ].w = width_frame_;
-    frame_clip_[ 4 ].h = height_frame_;
-
-    frame_clip_[ 5 ].x = width_frame_ * 5;
-    frame_clip_[ 5 ].y = 0;
-    frame_clip_[ 5 ].w = width_frame_;
-    frame_clip_[ 5 ].h = height_frame_;
-
-    frame_clip_[ 6 ].x = width_frame_ * 6;
-    frame_clip_[ 6 ].y = 0;
-    frame_clip_[ 6 ].w = width_frame_;
-    frame_clip_[ 6 ].h = height_frame_;
-
-    frame_clip_[ 7 ].x = width_frame_ * 7;
-    frame_clip_[ 7 ].y = 0;
-    frame_clip_[ 7 ].w = width_frame_;
-    frame_clip_[ 7 ].h = height_frame_;
-  }
+    // Clip the sprites using a loop
+    if (width_frame_ > 0 && height_frame_ > 0)
+    {
+        for (int i = 0; i < 8; ++i)
+        {
+            frame_clip_[i].x = width_frame_ * i;
+            frame_clip_[i].y = 0;
+            frame_clip_[i].w = width_frame_;
+            frame_clip_[i].h = height_frame_;
+        }
+    }
 }
 
 

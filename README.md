@@ -49,3 +49,4 @@ Mọi góp ý, thắc mắc hoặc hỗ trợ xin vui lòng liên hệ:
 📩 Gmail: bachcongdung206@gmail.com
 
 Xin chân thành cảm ơn!
+yêu cầu hiên tại của máy : KHÔNG CÓ

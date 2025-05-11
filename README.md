@@ -10,17 +10,18 @@ Là một tựa game 2D dựa trên tựa game huyền thoại Contra, nhân v�
 - **Tile Map System**: Sử dụng ô ảnh và file đánh dấu map bằng Notepad.
 
 ## Tính năng
-
+-di chuyển trái phải bằng phím múi tên,nhảy bằng SPACE ,bắn đạn bằng chuột trái
 - Bản đồ tự động cuộn khi nhân vật di chuyển.
 - Bắn đạn để tiêu diệt kẻ thù.
 - Nhặt đồng xu trên map để tăng điểm thưởng.
 - đánh boss
-- -đếm số quái bạn đã giết
+- tính điểm và tiền.
 
 ## Các nguồn của bài
 
 - Làm theo hướng dẫn danh sách game _sdl_2.0_ của YouTube [phattrienphanmem123.a-z](https://www.youtube.com/@phattrienphanmem123az).
-- Hình ảnh nhân vật và sprite, background tìm kiếm trên web [itch.io](https://itch.io/).
+- Hình ảnh nhân vật và sprite tìm kiếm trên web [itch.io](https://itch.io/). https://ansimuz.itch.io/gothicvania-patreon-collection
+- back ground và 1 số hình ảnh lấy trên goggle và tự vẽ;
 - video cuối https://drive.google.com/drive/folders/1KyVnZuFQaKRxP2bReJR4eVZXN-AbIzRQ?usp=drive_link
 ## cách tải mở game 
 vào mở link https://github.com/bachcongdung4106/WEAPONMASTER để tải project, ở đây đã đầy đủ thư viện, cách file ảnh và mã code

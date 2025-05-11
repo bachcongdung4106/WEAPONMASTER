@@ -35,11 +35,15 @@ Một số hình ảnh tự vẽ và lấy từ Google.
 
 Video demo:
 https://drive.google.com/file/d/1NTWxyjJySuw_vFbOJJOBmnuNcfh2Am_H/view
+tải file.zip tại đây Video demo:
+https://drive.google.com/file/d/1NTWxyjJySuw_vFbOJJOBmnuNcfh2Am_H/view
 
 💾 Cách tải và chạy game
 Truy cập GitHub để tải toàn bộ project:
 
 https://github.com/bachcongdung4106/WEAPONMASTER
+
+link tải file.zip https://drive.google.com/file/d/1NQgE_j05h6be3E17XihB-R2Bvyqi7GkE/view?usp=sharing
 
 Project đã bao gồm đầy đủ thư viện, file ảnh, mã nguồn và hướng dẫn.
 
